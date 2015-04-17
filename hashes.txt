@@ -164,7 +164,7 @@ x64\audio\sfx\S_MINI_SER.rpf
 447803392
 759e6984323dfdb0165b4b5f81c28b6a5e0306f3c9f84a011024bbda1b6537ef
 x64\audio\sfx\S_MINI_GAN.rpf
-727840768
+Verified 17 April 2015
 54bbb347c7f4a1b9444504a8e1d16635dd2d3d7a76f0ae1a2e5691ae647a5a33
 x64\audio\sfx\S_MINI_AMB.rpf
 Verified 17 April 2015
