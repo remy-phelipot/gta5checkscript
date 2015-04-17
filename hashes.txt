@@ -206,7 +206,7 @@ x64\audio\sfx\SS_DE.rpf
 154318848
 fb9c245b0a31bceea85432529f28b8a284fa1f99697b62a900e23113389fd7b4
 x64\audio\sfx\SS_AC.rpf
-443506688
+Verified 17 April 2015
 dbbe37d153b98b83fd7f29f5148b0c6d31a4a99eb43696eb60ebdb64784fb897
 x64\audio\sfx\SCRIPT.rpf
 Verified 16 April 2015
