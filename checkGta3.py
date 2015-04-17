@@ -115,4 +115,4 @@ print ('%s files OK, %s files CORRUPT, %s files unknown' % (okayFiles, badFiles,
 
 # Pause for the folks that double-click
 enter = input('Press ENTER to complete the script...')
-print 'Script complete.'
+print ('Script complete.')
