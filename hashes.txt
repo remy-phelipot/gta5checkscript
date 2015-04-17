@@ -266,10 +266,10 @@ x64\audio\sfx\RADIO_03_HIPHOP_NEW.rpf
 356595712
 bb9960b927c60d440fd0613676f8c8be9aca065ba7c69534eba406db42eefd4f
 x64\audio\sfx\RADIO_02_POP.rpf
-Verified 16 April 2015
+Verified 17 April 2015
 8dae16e24dc391c37693b0c380f61ad74023761040fa6be665b8797802365aa3
 x64\audio\sfx\RADIO_01_CLASS_ROCK.rpf
-Verified 16 April 2015
+Verified 17 April 2015
 f01ffae12e82f279a221d1fbbdb7a4b30c76a06a7e0b66def432718a68d2cc39
 x64\audio\sfx\WEAPONS_PLAYER.rpf
 3883008
