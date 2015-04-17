@@ -8,6 +8,8 @@ If you do think that your file is corrupt, rename the file and restart GTA V. Th
 
 No dependencies required. Developed against Python 2.7.9.
 
+If you use Python 3.x, use the `checkGta3.py` script.
+
 # Execution
 
 Place the `checkGta.py` file in the directory above your GTA V install.
