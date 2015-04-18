@@ -140,7 +140,7 @@ update\x64\dlcpacks\patchday1ng\dlc.rpf
 467415040
 219518f829ab0eef99f01101c0728437ec7ae671519cec7a1ac6090f9250e9be
 update\x64\dlcpacks\patchday2ng\dlc.rpf
-804900864
+Verified 17 April 2015
 a9664cedda6b98aa20db11c5eefea6807497940210a324aa87ca765f41a1e1fb
 x64\metadata.dat
 848000
@@ -200,7 +200,7 @@ x64\audio\sfx\SS_GM.rpf
 Verified 16 April 2015
 714880ec39abbd7b791f3407b8d3b810c0ce15c540d6b5c2c2c9cac7fb3d7b8d
 x64\audio\sfx\SS_FF.rpf
-767225856
+Verified 17 April 2015
 5f300ca914e03e5e964eebdf3c4ad8cb406a638ac66771b73ca20f8cc350b9cd
 x64\audio\sfx\SS_DE.rpf
 154318848
