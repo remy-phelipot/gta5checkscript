@@ -33,3 +33,7 @@ Once all files are downloaded, run the script once more to verify the results. T
 # What to do with unknown files
 
 Tell me about them. The script should handle all files in the directory by either hashing them or ignoring them. If a game file is being reported as an unknown, give me the full path to the file so that I can work with it.
+
+# Using the repair script
+
+TODO: Write a how-to here. Coming soon^(TM).
