@@ -70,13 +70,13 @@ Okay, this one is a little tricky so make sure to read and understand the instru
 3. Wait for the launcher to finish the download and delete the `.hash` and `.part` files
 4. *QUICKLY* click on the finished file and hit `CTRL + C` and then `CTRL + V`
 
-If you moved fast enough, you should now have a copy in the folder. For example, if you copied `x64a.rpf` then there should be `x64a Copy.rpf` in the folder.
+If you moved fast enough, you should now have a copy in the folder. For example, if you copied `x64a.rpf` then there should be `x64a - Copy.rpf` in the folder.
 
 *REPEAT* steps 1 through 4 above to get two more copies. When you're done, you will have three files that look something like
 
-* `x64a Copy.rpf`
-* `x64a Copy (2).rpf`
-* `x64a Copy (3).rpf`
+* `x64a - Copy.rpf`
+* `x64a - Copy (2).rpf`
+* `x64a - Copy (3).rpf`
  
 **Third:** Now we're ready to configure `repairGta.py`
 
