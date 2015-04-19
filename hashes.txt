@@ -14,7 +14,7 @@ x64p.rpf
 Verified 18 April 2015
 cf91a0c21045402deb1ce749b0b67d322fa60cdc4f554588a3a72d02d9c39bee
 x64q.rpf
-2823614464
+Verified 19 April 2015
 cdf36e81ff435d736ef4f54bcbaf8faf43baa57b0ae59c8cca7dcb06b02cb6b2
 x64r.rpf
 1711259648
@@ -359,5 +359,5 @@ update\x64\dlcpacks\patchday2bng\dlc.rpf
 Verified 15 April 2015
 7f446ff14489e3fb83ca8334f41972b7cbf0f58e7df3a20a2818451873fc576b
 update\x64\dlcpacks\patchday3ng\dlc.rpf
-Verified 16 April 2015
+Verified 19 April 2015
 1ea4b072b9b737470f73d578079c6616f3194bd9985bfe2347802c28a6cd135e
