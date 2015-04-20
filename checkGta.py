@@ -1,5 +1,9 @@
 import hashlib
 import os
+import sys
+import time
+
+startTime = time.time()
 
 # Configure this to the name of the install directory
 gtaDirectory = 'Grand Theft Auto V'
@@ -20,7 +24,8 @@ ignoreFiles = ['commandline.txt',
                'ReadMe\Polish\ReadMe.txt',
                'ReadMe\Portuguese\ReadMe.txt',
                'ReadMe\Russian\ReadMe.txt',
-               'ReadMe\Spanish\ReadMe.txt']
+               'ReadMe\Spanish\ReadMe.txt',
+               'update\update.rpf']
 ignoreList = []
 for ignoreFile in ignoreFiles:
   ignoreList.append(os.path.join(gtaDirectory, ignoreFile))
@@ -72,7 +77,7 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
 
     if gtaFile in hashList:
       # Hash this file
-      BLOCKSIZE = 262144
+      BLOCKSIZE = 64*1024
       hasher = hashlib.new('sha256')
       with open(gtaFile, 'rb') as afile:
         buf = afile.read(BLOCKSIZE)
@@ -112,6 +117,11 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
 
 # All files processed, output results
 print '%s files OK, %s files CORRUPT, %s files unknown' % (okayFiles, badFiles, unknownFiles)
+
+endTime = time.time()
+duration = endTime - startTime
+minutes, seconds = divmod(duration, 60)
+print 'Analysis completed in %sm %ss' % (minutes, seconds)
 
 # Pause for the folks that double-click
 enter = raw_input('Press ENTER to complete the script...')
