@@ -16,6 +16,7 @@ No script will modify any files inside the game directory, or remove corrupt fil
 * How to handle HASH MISMATCH files
 * How to handle UNKNOWN files
 * How to use `repairGta.py`
+* How to get help or contact me
 
 # How to use `checkGta.py` and `checkGta3.py`
 
@@ -103,3 +104,15 @@ If the hash is incorrect, this stinks and it can happen.
 Pick one of the three copies that you created earlier, and delete it. Then, go through steps 1 to 4 above again to get a new copy of the file. Re-run the script, and hopefully the file comes out correct this time. So far, I've only had to do this once, but it could happen more often than that depending on your network integrity.
 
 Again, if at any point the above steps do not make sense, please let me know so I can help clear up any confusion. Good luck with the repair.
+
+# How to get help or contact me
+
+Okay, so this Readme is getting long enough as it is, but something that needs saying: I'm here to help.
+
+If you have any trouble running this script, or have questions or suggestions, please feel free to contact me. The best way to reach me is message me on Reddit. My username on there is nuadi.
+
+If you tweet, you can reach me by @nuadibantine
+
+If the first two options are no good, you're welcome to create tickets here on the Github project.
+
+When/If you do contact me, screenshots are quite honestly the best way to communicate your errors. Take a screenshot of your command prompt, and send me the image so I can see exactly how you're running the scripts, what it says, and what I might need to fix. Feel free to send me the `checkGta.log` file contents if you need to.
