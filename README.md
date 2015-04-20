@@ -21,7 +21,7 @@ No script will modify any files inside the game directory, or remove corrupt fil
 
 If you are using Python 2.x then where is says `script` you should use `checkGta.py`. If you are using Python 3.x, then where it says `script` you should use `checkGta3.py`.
 
-Place the `script` in the directory above your GTA V install.
+Place the `script` and `hashes.txt` file in the directory above your GTA V install.
 
 For example, if you have it installed in
 
