@@ -1,5 +1,9 @@
 import hashlib
 import os
+import sys
+import time
+
+startTime = time.time()
 
 # Configure this to the name of the install directory
 gtaDirectory = 'Grand Theft Auto V'
@@ -20,14 +24,15 @@ ignoreFiles = ['commandline.txt',
                'ReadMe\Polish\ReadMe.txt',
                'ReadMe\Portuguese\ReadMe.txt',
                'ReadMe\Russian\ReadMe.txt',
-               'ReadMe\Spanish\ReadMe.txt']
+               'ReadMe\Spanish\ReadMe.txt',
+               'update\update.rpf']
 ignoreList = []
 for ignoreFile in ignoreFiles:
   ignoreList.append(os.path.join(gtaDirectory, ignoreFile))
 
 # Initialize the log file, or clear it if it's present
 logFile = os.path.expanduser('~\checkGta.log')
-print ('Logging all output to: %s' % logFile)
+print('Logging all output to: %s' % logFile)
 with open(logFile, 'w') as log:
   log.write('')
 
@@ -46,7 +51,7 @@ with open('hashes.txt', 'r') as hashFile:
       else:
         fileName = os.path.join(gtaDirectory, line)
       lineType += 1
-      #print (fileName) #diagnostic
+      #print(fileName) #diagnostic
     elif lineType == 1:
       # Skip this line, only used for notes
       lineType += 1
@@ -72,7 +77,7 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
 
     if gtaFile in hashList:
       # Hash this file
-      BLOCKSIZE = 262144
+      BLOCKSIZE = 64*1024
       hasher = hashlib.new('sha256')
       with open(gtaFile, 'rb') as afile:
         buf = afile.read(BLOCKSIZE)
@@ -89,7 +94,7 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
         status = '%s OK!' % gtaFile
         with open(logFile, 'a') as log:
           log.write(status + '\n')
-        print (status)
+        print(status)
         okayFiles += 1
 
       else:
@@ -98,8 +103,8 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
         with open(logFile, 'a') as log:
           log.write(status + '\n')
           log.write(expected + '\n')
-        print (status)
-        print (expected)
+        print(status)
+        print(expected)
         badFiles += 1
 
     elif gtaFile not in ignoreList and gtaFile.find('.part') == -1 and gtaFile.find('.hash') == -1:
@@ -107,12 +112,17 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
       status = 'Unknown file: %s' % gtaFile
       with open(logFile, 'a') as log:
         log.write(status + '\n')
-      print (status)
+      print(status)
       unknownFiles += 1
 
 # All files processed, output results
-print ('%s files OK, %s files CORRUPT, %s files unknown' % (okayFiles, badFiles, unknownFiles))
+print('%s files OK, %s files CORRUPT, %s files unknown' % (okayFiles, badFiles, unknownFiles))
+
+endTime = time.time()
+duration = endTime - startTime
+minutes, seconds = divmod(duration, 60)
+print('Analysis completed in %sm %ss' % (minutes, seconds))
 
 # Pause for the folks that double-click
 enter = input('Press ENTER to complete the script...')
-print ('Script complete.')
+print('Script complete.')
