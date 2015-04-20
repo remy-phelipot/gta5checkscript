@@ -25,13 +25,14 @@ ignoreFiles = ['commandline.txt',
                'ReadMe\\Portuguese\\ReadMe.txt',
                'ReadMe\\Russian\\ReadMe.txt',
                'ReadMe\\Spanish\\ReadMe.txt',
-               'update\\update.rpf']
+               'update\\update.rpf',
+               'update\\x64\\metadata.dat']
 ignoreList = []
 for ignoreFile in ignoreFiles:
   ignoreList.append(os.path.join(gtaDirectory, ignoreFile))
 
 # Initialize the log file, or clear it if it's present
-logFile = os.path.expanduser('~\checkGta.log')
+logFile = os.path.expanduser('~\\checkGta.log')
 print('Logging all output to: %s' % logFile)
 with open(logFile, 'w') as log:
   log.write('')
