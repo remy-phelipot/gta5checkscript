@@ -99,7 +99,7 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
         okayFiles += 1
 
       else:
-        status = '%s CORRUPT!' % gtaFile
+        status = '%s HASH MISMATCH!' % gtaFile
         expected = 'Expected \'%s\' but found \'%s\'' % (fileHash, gtaHash)
         with open(logFile, 'a') as log:
           log.write(status + '\n')
@@ -117,7 +117,7 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
       unknownFiles += 1
 
 # All files processed, output results
-print('%s files OK, %s files CORRUPT, %s files unknown' % (okayFiles, badFiles, unknownFiles))
+print('%s files OK, %s HASH MISMATCHES, %s files unknown' % (okayFiles, badFiles, unknownFiles))
 
 endTime = time.time()
 duration = endTime - startTime
