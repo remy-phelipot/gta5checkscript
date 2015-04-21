@@ -12,11 +12,26 @@ No script will modify any files inside the game directory, or remove corrupt fil
 
 # Contents
 
+* How to verify files using the Social Club launcher or Steam
 * How to use `checkGta.py` and `checkGta3.py`
 * How to handle HASH MISMATCH files
 * How to handle UNKNOWN files
 * How to use `repairGta.py`
 * How to get help or contact me
+
+# How to verify files using the Social Club launcher or Steam
+
+It turns out that Rockstar does include a method to rehash all files in the game, but didn't tell anyone about it. Here's how to verify all files using the Social Club Launcher (Steam users look below)
+
+1. Go into your install directory and create a shortcut for `GTAVLauncher.exe`
+2. Right-click on the new shortcut and go to Properties
+3. On the Shortcut tab, add `-verify` to the end of the Target text box
+4. Hit OK
+5. Run this shortcut
+
+If you are a Steam user, then you need to use Steam to verify the files. I've included that method here for those that didn't know Steam does this for all games.
+
+...
 
 # How to use `checkGta.py` and `checkGta3.py`
 
