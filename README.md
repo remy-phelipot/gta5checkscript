@@ -29,9 +29,14 @@ It turns out that Rockstar does include a method to rehash all files in the game
 4. Hit OK
 5. Run this shortcut
 
+This will force the launcher to rehash all files, and if any are corrupt it will download a new copy. It's possible that repeat corrupt copies could be downloaded, and that's where the `repairGta.py` script can help. I recommend letting the launcher try at least 3 or 4 times to get the file. If it still can't get a good copy, then try the repair script.
+
 If you are a Steam user, then you need to use Steam to verify the files. I've included that method here for those that didn't know Steam does this for all games.
 
-...
+1. Right-click on the game and choose Properties
+2. On the Local Files tab, click the Verify Integrity of Game Chache...
+
+Steam is usually pretty good about fixing game files under this method, but the files for GTA V are so large that it's possible that you could get repeat corrupt files. I do not own GTA V in Steam, so I don't know if it will keep retrying like the Social Club launcher, or just download once. If you have to download the same file 3 or 4 times, I recommend trying to use the `repairGta.py` script to repair the file.
 
 # How to use `checkGta.py` and `checkGta3.py`
 
