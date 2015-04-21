@@ -25,7 +25,11 @@ It turns out that Rockstar does include a method to rehash all files in the game
 
 1. Go into your install directory and create a shortcut for `GTAVLauncher.exe`
 2. Right-click on the new shortcut and go to Properties
-3. On the Shortcut tab, add `-verify` to the end of the Target text box. For example, if your shortcut has `"C:\Program Files\Rockstar Games\Grand Theft Auto V\GTALauncher.exe"` to start, then it should look like this with the new flag `"C:\Program Files\Rockstar Games\Grand Theft Auto V\GTALauncher.exe" -verify`.
+3. On the Shortcut tab, add `-verify` to the end of the Target text box.  
+For example, if your shortcut has  
+    `"C:\Program Files\Rockstar Games\Grand Theft Auto V\GTALauncher.exe"`  
+to start, then it should look like this with the new flag  
+    `"C:\Program Files\Rockstar Games\Grand Theft Auto V\GTALauncher.exe" -verify`
 4. Hit OK
 5. Run this shortcut (may have to run as administrator)
 
