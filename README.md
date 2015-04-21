@@ -27,7 +27,7 @@ It turns out that Rockstar does include a method to rehash all files in the game
 2. Right-click on the new shortcut and go to Properties
 3. On the Shortcut tab, add `-verify` to the end of the Target text box
 4. Hit OK
-5. Run this shortcut
+5. Run this shortcut (may have to run as administrator)
 
 This will force the launcher to rehash all files, and if any are corrupt it will download a new copy. It's possible that repeat corrupt copies could be downloaded, and that's where the `repairGta.py` script can help. I recommend letting the launcher try at least 3 or 4 times to get the file. If it still can't get a good copy, then try the repair script.
 
