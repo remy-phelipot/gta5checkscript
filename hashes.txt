@@ -362,5 +362,11 @@ update\x64\dlcpacks\patchday3ng\dlc.rpf
 Verified 19 April 2015
 1ea4b072b9b737470f73d578079c6616f3194bd9985bfe2347802c28a6cd135e
 GTA5.exe
-Verified 21 April 2015
+Verified 22 April 2015
 ee582c643f17ff5909b56083c40fca14dd35c15617c0b7d054d4624ce18acc4a
+update\update.rpf
+Verified 22 April 2015
+afdeec57638e72558a95479ff63d68b2a6317926d3a3e9532245939fbcb199ed
+update\x64\metadata.dat
+Verified 22 April 2015
+d41b5f47162b3e972e61804843c8257652cc8110d4ac1dba52b919db3532b2ba
