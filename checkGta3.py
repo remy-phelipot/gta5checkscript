@@ -23,9 +23,7 @@ ignoreFiles = ['commandline.txt',
                'ReadMe\\Polish\\ReadMe.txt',
                'ReadMe\\Portuguese\\ReadMe.txt',
                'ReadMe\\Russian\\ReadMe.txt',
-               'ReadMe\\Spanish\\ReadMe.txt',
-               'update\\update.rpf',
-               'update\\x64\\metadata.dat']
+               'ReadMe\\Spanish\\ReadMe.txt']
 ignoreList = []
 for ignoreFile in ignoreFiles:
   ignoreList.append(os.path.join(gtaDirectory, ignoreFile))
