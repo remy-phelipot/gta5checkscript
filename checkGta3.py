@@ -10,7 +10,6 @@ gtaDirectory = 'Grand Theft Auto V'
 
 # Initialize a list of files to ignore based on the install directory
 ignoreFiles = ['commandline.txt',
-               'GTA5.exe',
                'GTAVLauncher.exe',
                'PlayGTAV.exe',
                'ReadMe\\Chinese\\ReadMe.txt',
