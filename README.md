@@ -46,7 +46,9 @@ Steam is usually pretty good about fixing game files under this method, but the 
 
 # How to use `checkGta.py` and `checkGta3.py`
 
-If you are using Python 2.x then where is says `script` you should use `checkGta.py`. If you are using Python 3.x, then where it says `script` you should use `checkGta3.py`.
+If the two verification methods above are not working properly, or you'd like an outside opinion, you can use the scripts I wrote in this project to check the SHA256 hash of all data files. These scripts require Python to run. If you do not have it, head over to http://www.python.org/ to download an installer. Either version is fine.
+
+If you are using Python 2.x then where is says `script` you should use `checkGta.py`. If you are using Python 3.x, then where it says `script` you should use `checkGta3.py`. Note: The `checkGta_multi.py` script is designed for Python 2.x. Eventually, all scripts will be multithreaded.
 
 Place the `script` and `hashes.txt` file in the directory above your GTA V install.
 
