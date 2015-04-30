@@ -8,7 +8,7 @@ This project is a collection of scripts that I wrote to help validate and/or rep
 
 The `hashes.txt` file is a master list of all expected files in the game directory, and their hashes. This list is updated based on the Social Club launcher. I do not own the Steam version, but I am willing to support it if you send me valid hashes. Most of the hashes match, as only a few users have told me otherwise.
 
-**Last check:** The contents of `hashes.txt` was verified after the 21 April patch.
+**Last check:** The contents of `hashes.txt` was verified after the 30 April patch.
 
 No script will modify any files inside the game directory, or remove corrupt files.
 
