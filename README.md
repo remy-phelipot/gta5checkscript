@@ -48,7 +48,7 @@ Steam is usually pretty good about fixing game files under this method, but the 
 
 If the two verification methods above are not working properly, or you'd like an outside opinion, you can use the scripts I wrote in this project to check the SHA256 hash of all data files. These scripts require Python to run. If you do not have it, head over to http://www.python.org/ to download an installer. Either version is fine.
 
-Place the `checkGta.py` script and the `hashes.txt` file in the directory above your GTA V install.
+Place the `checkGta.py` script and the `hashes.txt` file, or `steam_hashes.txt` if you're using Steam, in the directory above your GTA V install.
 
 For example, if you have it installed the game in
 
@@ -59,6 +59,12 @@ then you need to run the script from
 `C:\Program Files\Rockstar Games\`
 
 Execute using a command prompt and Python, or double-click the script. You may need to run as Administrator.
+
+**Steam Users:** You must execute the script from a Command Prompt using the `-steam` argument. Like this:
+
+    >python checkGta.py -steam
+
+This works for both `checkGta.py` and `checkGta_multi.py`.
 
 *Note:* If you renamed the install directory, then you will need to modify the script where it says
 
