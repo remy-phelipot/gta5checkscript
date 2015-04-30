@@ -135,7 +135,7 @@ class HashWorker (threading.Thread):
             logLock.release()
 
           else:
-            status = '%s CORRUPT!' % gtaFile
+            status = '%s HASH MISMATCH!' % gtaFile
             expected = 'Expected \'%s\' but found \'%s\'' % (fileHash, gtaHash)
             logLock.acquire()
             with open(logFile, 'a') as log:
