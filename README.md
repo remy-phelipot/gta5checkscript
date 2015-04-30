@@ -2,21 +2,20 @@
 
 This project is a collection of scripts that I wrote to help validate and/or repair my Grand Theft Auto V PC installation. The scripts available are
 
-* `checkGta.py`: This script will calculate the SHA256 hashes of all files in the game directory and report if the files are 'OK', 'HASH MISMATCH', or 'UNKNOWN'. This script is developed for Python 2.x.
-* `checkGta3.py`: This script is the same as `checkGta.py` but is developed for Python 3.x.
-* `checkGta_multi.py`: This is a multi-threaded version of the Python 2.x script, and will eventually replace all scripts. Consider this the "beta" version of the project right now.
+* `checkGta.py`: This script will calculate the SHA256 hashes of all files in the game directory and report if the files are 'OK', 'HASH MISMATCH', or 'UNKNOWN'. This script is developed for both Python 2.x and 3.x.
+* `checkGta_multi.py`: This is a multi-threaded version of the `checkGta.py` script that uses 4 cores. Consider this the "beta" version of the project right now. It will eventually become the only check script.
 * `repairGta.py`: This script will use three corrupt files and attempt to construct a single valid file by comparing the three at the binary level. This script is developed for use in both Python 2.x and 3.x.
 
 The `hashes.txt` file is a master list of all expected files in the game directory, and their hashes. This list is updated based on the Social Club launcher. I do not own the Steam version, but I am willing to support it if you send me valid hashes. Most of the hashes match, as only a few users have told me otherwise.
 
-**Last check:** The contents of `hashes.txt` was verified after the 30 April patch.
+**Last check:** The contents of `hashes.txt` was verified after the 30 April patch. The contents of `steam_hashes.txt` was verified after the 21 April patch.
 
 No script will modify any files inside the game directory, or remove corrupt files.
 
 # Contents
 
 * How to verify files using the Social Club launcher or Steam
-* How to use `checkGta.py` and `checkGta3.py`
+* How to use `checkGta.py`
 * How to handle HASH MISMATCH files
 * How to handle UNKNOWN files
 * How to use `repairGta.py`
@@ -45,15 +44,13 @@ If you are a Steam user, then you need to use Steam to verify the files. I've in
 
 Steam is usually pretty good about fixing game files under this method, but the files for GTA V are so large that it's possible that you could get repeat corrupt files. I do not own GTA V in Steam, so I don't know if it will keep retrying like the Social Club launcher, or just download once. If you have to download the same file 3 or 4 times, I recommend trying to use the `repairGta.py` script to repair the file.
 
-# How to use `checkGta.py` and `checkGta3.py`
+# How to use `checkGta.py`
 
 If the two verification methods above are not working properly, or you'd like an outside opinion, you can use the scripts I wrote in this project to check the SHA256 hash of all data files. These scripts require Python to run. If you do not have it, head over to http://www.python.org/ to download an installer. Either version is fine.
 
-If you are using Python 2.x then where is says `script` you should use `checkGta.py`. If you are using Python 3.x, then where it says `script` you should use `checkGta3.py`. Note: The `checkGta_multi.py` script is designed for Python 2.x. Eventually, all scripts will be multithreaded.
+Place the `checkGta.py` script and the `hashes.txt` file in the directory above your GTA V install.
 
-Place the `script` and `hashes.txt` file in the directory above your GTA V install.
-
-For example, if you have it installed in
+For example, if you have it installed the game in
 
 `C:\Program Files\Rockstar Games\Grand Theft Auto V\`
 
@@ -61,9 +58,9 @@ then you need to run the script from
 
 `C:\Program Files\Rockstar Games\`
 
-Execute using command prompt and Python. You may need to run as Administrator.
+Execute using a command prompt and Python, or double-click the script. You may need to run as Administrator.
 
-*Note:* If you renamed the install directory, then you will need to modify the `script` where it says
+*Note:* If you renamed the install directory, then you will need to modify the script where it says
 
     gtaDirectory = 'Grand Theft Auto V'
 
@@ -71,7 +68,7 @@ and change it so that your directory name appears within the single quotes.
 
 # How to handle HASH MISMATCH files
 
-If the `script` reports that your file is a HASH MISMATCH, *DO NOT* delete it. A mismatch does not mean it's corrupt, since it could have been updated this morning and I don't have the hash for it yet.
+If the script reports that your file is a HASH MISMATCH, *DO NOT* delete it. A mismatch does not mean it's corrupt, since it could have been updated this morning and I don't have the hash for it yet.
 
 1. Make sure the GTA V Launcher is closed.
 2. Rename the file
@@ -81,7 +78,7 @@ You must ensure that the download process does not get interrupted so that the l
 
 Once all files are downloaded, run the script once more to verify the results. The launcher does not verify files on launch, it only checks that a file exists and that it's the proper size. However, all files are pre-allocated before download, so if the update process is interrupted then the launcher will never check if the file has a valid hash or not.
 
-If the same file is reported as a HASH MISMATCH, but you get the same hash for that file every time it's downloaded, *TELL ME*. This means that the file has probably changed and I need to update `hashes.txt` since the probability of getting the same file twice corrupt in exactly the same way is slim-to-none.
+If the same file is reported as a HASH MISMATCH, but you get the same hash for that file every time it's downloaded, *TELL ME*. This means that the file has probably changed and I need to update `hashes.txt` since the probability of getting the same file twice corrupt in exactly the same way is slim-to-none (this is known as a hash collision).
 
 # How to handle UNKNOWN files
 
@@ -93,7 +90,7 @@ Check the Issues section for bugs that report an unknown file. If no bug report 
 
 Okay, this one is a little tricky so make sure to read and understand the instructions entirely. If for any reason something in here doesn't make sense, please create an issue under Feedback so I can get the process as clear as humanly possible.
 
-**First:** The `repairGta.py` script should be run in the same location as `checkGta.py`, or `checkGta3.py`, from above. Read the _How to use `checkGta.py` and `checkGta3.py`_ above if you're not sure.
+**First:** The `repairGta.py` script should be run in the same location as `checkGta.py` from above. Read the _How to use `checkGta.py`_ above if you're not sure.
 
 **Second:** You are going to need 3 copies of the file you want to repair. This is the tricky part.
 
