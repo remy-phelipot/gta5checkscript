@@ -29,7 +29,7 @@ for ignoreFile in ignoreFiles:
 
 # Initialize the log file, or clear it if it's present
 logFile = os.path.expanduser('~\\checkGta.log')
-print 'Logging all output to: %s' % logFile
+print('Logging all output to: %s' % logFile)
 with open(logFile, 'w') as log:
   log.write('')
 
@@ -48,7 +48,7 @@ with open('hashes.txt', 'r') as hashFile:
       else:
         fileName = os.path.join(gtaDirectory, line)
       lineType += 1
-      #print fileName #diagnostic
+      #print(fileName) #diagnostic
     elif lineType == 1:
       # Skip this line, only used for notes
       lineType += 1
@@ -91,7 +91,7 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
         status = '%s OK!' % gtaFile
         with open(logFile, 'a') as log:
           log.write(status + '\n')
-        print status
+        print(status)
         okayFiles += 1
 
       else:
@@ -100,8 +100,8 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
         with open(logFile, 'a') as log:
           log.write(status + '\n')
           log.write(expected + '\n')
-        print status
-        print expected
+        print(status)
+        print(expected)
         badFiles += 1
 
     elif gtaFile not in ignoreList and gtaFile.find('.part') == -1 and gtaFile.find('.hash') == -1 and gtaFile.find('.lnk') == -1 and gtaFile.find('_CommonRedist') == -1:
@@ -109,17 +109,20 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
       status = 'UNKNOWN file: %s' % gtaFile
       with open(logFile, 'a') as log:
         log.write(status + '\n')
-      print status
+      print(status)
       unknownFiles += 1
 
 # All files processed, output results
-print '%s files OK, %s HASH MISMATCHES, %s files UNKNOWN' % (okayFiles, badFiles, unknownFiles)
+print('%s files OK, %s HASH MISMATCHES, %s files UNKNOWN' % (okayFiles, badFiles, unknownFiles))
 
 endTime = time.time()
 duration = endTime - startTime
 minutes, seconds = divmod(duration, 60)
-print 'Analysis completed in %sm %ss' % (minutes, seconds)
+print('Analysis completed in %sm %ss' % (minutes, seconds))
 
 # Pause for the folks that double-click
-enter = raw_input('Press ENTER to complete the script...')
-print 'Script complete.'
+try:
+  input('Press ENTER to complete the script...')
+except:
+  # It will always produce an error, so Gotta Catch 'Em All!
+  print('Script complete.')
