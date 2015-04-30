@@ -2,6 +2,7 @@ import hashlib
 import os
 import threading
 import time
+import sys
 
 startTime = time.time()
 
@@ -34,9 +35,15 @@ print('Logging all output to: %s' % logFile)
 with open(logFile, 'w') as log:
   log.write('')
 
+# Adapt hash file if we're using Steam
+hashFile = 'hashes.txt'
+if len(sys.argv) > 1 and sys.argv[1] == '-steam':
+  hashFile = 'steam_hashes.txt'
+
 # Ingest the master hash list
+print('Loading hash file: %s' % hashFile)
 hashList = {}
-with open('hashes.txt', 'r') as hashFile:
+with open(hashFile, 'r') as hashFile:
   lineType = 0
   fileName = ''
   for line in hashFile:
@@ -166,7 +173,7 @@ class HashWorker (threading.Thread):
 
 # Setup parameters of the work force
 workForce = []
-workerCount = 4
+workerCount = 5
 
 # Hire a work force
 for index in range(0,workerCount):
