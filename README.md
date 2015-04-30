@@ -4,6 +4,7 @@ This project is a collection of scripts that I wrote to help validate and/or rep
 
 * `checkGta.py`: This script will calculate the SHA256 hashes of all files in the game directory and report if the files are 'OK', 'HASH MISMATCH', or 'UNKNOWN'. This script is developed for Python 2.x.
 * `checkGta3.py`: This script is the same as `checkGta.py` but is developed for Python 3.x.
+* `checkGta_multi.py`: This is a multi-threaded version of the Python 2.x script, and will eventually replace all scripts. Consider this the "beta" version of the project right now.
 * `repairGta.py`: This script will use three corrupt files and attempt to construct a single valid file by comparing the three at the binary level. This script is developed for use in both Python 2.x and 3.x.
 
 The `hashes.txt` file is a master list of all expected files in the game directory, and their hashes. This list is updated based on the Social Club launcher. I do not own the Steam version, but I am willing to support it if you send me valid hashes. Most of the hashes match, as only a few users have told me otherwise.
