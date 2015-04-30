@@ -6,7 +6,10 @@ This project is a collection of scripts that I wrote to help validate and/or rep
 * `checkGta_multi.py`: This is a multi-threaded version of the `checkGta.py` script that uses 4 cores. Consider this the "beta" version of the project right now. It will eventually become the only check script.
 * `repairGta.py`: This script will use three corrupt files and attempt to construct a single valid file by comparing the three at the binary level. This script is developed for use in both Python 2.x and 3.x.
 
-The `hashes.txt` file is a master list of all expected files in the game directory, and their hashes. This list is updated based on the Social Club launcher. I do not own the Steam version, but I am willing to support it if you send me valid hashes. Most of the hashes match, as only a few users have told me otherwise.
+There are two lists of hash values that serve as lists of all expected files in the game directories.
+
+* `hashes.txt`: This list is updated based on the Social Club launcher. This is the version I own.
+* `steam_hashes.txt`: This list is based on the Steam version, and is based on user submissions. Please help me maintain this version by sending me your `checkGta.log` file if you spot any HASH MISMATCH files.
 
 **Last check:** The contents of `hashes.txt` was verified after the 30 April patch. The contents of `steam_hashes.txt` was verified after the 21 April patch.
 
