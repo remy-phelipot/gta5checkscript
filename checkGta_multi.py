@@ -30,7 +30,7 @@ for ignoreFile in ignoreFiles:
 
 # Initialize the log file, or clear it if it's present
 logFile = os.path.expanduser('checkGta.log')
-print 'Logging all output to: %s' % logFile
+print('Logging all output to: %s' % logFile)
 with open(logFile, 'w') as log:
   log.write('')
 
@@ -49,7 +49,7 @@ with open('hashes.txt', 'r') as hashFile:
       else:
         fileName = os.path.join(gtaDirectory, line)
       lineType += 1
-      #print fileName #diagnostic
+      #print(fileName) #diagnostic
     elif lineType == 1:
       # Skip this line, only used for notes
       lineType += 1
@@ -74,11 +74,11 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
   for filename in filenames:
     gtaFile = os.path.join(dirpath, filename)
     gtaFileList.append(gtaFile)
-print '%s files found' % len(gtaFileList)
+print('%s files found' % len(gtaFileList))
 
 if len(gtaFileList) == 0:
-  print 'Could not locate any files.'
-  print 'Make sure that you run the script from outside of the game folder'
+  print('Could not locate any files.')
+  print('Make sure that you run the script from outside of the game folder')
   quit()
 
 # Used by workers to determine the next file to work on
@@ -96,7 +96,7 @@ class HashWorker (threading.Thread):
     global nextFile, okayFiles, badFiles, unknownFiles, ignoredFiles, hashList
 
     logLock.acquire()
-    print 'Shift starting for worker %s' % self.threadId
+    print('Shift starting for worker %s' % self.threadId)
     logLock.release()
     working = True
 
@@ -130,29 +130,29 @@ class HashWorker (threading.Thread):
             logLock.acquire()
             with open(logFile, 'a') as log:
               log.write(status + '\n')
-            print status
+            print(status)
             okayFiles += 1
             logLock.release()
 
           else:
-            status = '%s HASH MISMATCH!' % gtaFile
+            status = '%s CORRUPT!' % gtaFile
             expected = 'Expected \'%s\' but found \'%s\'' % (fileHash, gtaHash)
             logLock.acquire()
             with open(logFile, 'a') as log:
               log.write(status + '\n')
               log.write(expected + '\n')
-            print status
-            print expected
+            print(status)
+            print(expected)
             badFiles += 1
             logLock.release()
 
-        elif gtaFile not in ignoreList and gtaFile.find('.part') == -1 and gtaFile.find('.hash') == -1 and gtaFile.find('.lnk') == -1 and gtaFile.find('_CommonRedist') == -1:
+        elif gtaFile not in ignoreList and gtaFile.find('.part') == -1 and gtaFile.find('.hash') == -1 and gtaFile.find('.lnk') == -1:
           # Not sure about this file, output for inspection
           status = 'UNKNOWN file: %s' % gtaFile
           logLock.acquire()
           with open(logFile, 'a') as log:
             log.write(status + '\n')
-          print status
+          print(status)
           unknownFiles += 1
           logLock.release()
 
@@ -160,7 +160,7 @@ class HashWorker (threading.Thread):
         working = False
 
     logLock.acquire()
-    print 'Worker %s ending shift' % self.threadId
+    print('Worker %s ending shift' % self.threadId)
     logLock.release()
 
 
@@ -182,13 +182,16 @@ for worker in workForce:
   worker.join()
 
 # All files processed, output results
-print '%s files OK, %s files HASH MISMATCHES, %s files UNKNOWN' % (okayFiles, badFiles, unknownFiles)
+print('%s files OK, %s files HASH MISMATCHES, %s files UNKNOWN' % (okayFiles, badFiles, unknownFiles))
 
 endTime = time.time()
 duration = endTime - startTime
 minutes, seconds = divmod(duration, 60)
-print 'Analysis completed in %sm %ss' % (minutes, seconds)
+print('Analysis completed in %sm %ss' % (minutes, seconds))
 
 # Pause for the folks that double-click
-enter = raw_input('Press ENTER to complete the script...')
-print 'Script complete.'
+try:
+  input('Press ENTER to complete the script...')
+except:
+  # It will always produce an error, so Gotta Catch 'Em All!
+  print('Script complete.')
