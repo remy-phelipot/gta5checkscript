@@ -104,7 +104,7 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
         print expected
         badFiles += 1
 
-    elif gtaFile not in ignoreList and gtaFile.find('.part') == -1 and gtaFile.find('.hash') == -1 and gtaFile.find('.lnk') == -1:
+    elif gtaFile not in ignoreList and gtaFile.find('.part') == -1 and gtaFile.find('.hash') == -1 and gtaFile.find('.lnk') == -1 and gtaFile.find('_CommonRedist') == -1:
       # Not sure about this file, output for inspection
       status = 'UNKNOWN file: %s' % gtaFile
       with open(logFile, 'a') as log:
