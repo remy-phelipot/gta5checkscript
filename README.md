@@ -65,7 +65,7 @@ Execute using a command prompt and Python, or double-click the script. You may n
 
 **Steam Users:** You must execute the script from a Command Prompt using the `-steam` argument. Like this:
 
-    >python checkGta.py -steam
+    python checkGta.py -steam
 
 This works for both `checkGta.py` and `checkGta_multi.py`.
 
