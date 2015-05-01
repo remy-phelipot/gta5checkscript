@@ -142,7 +142,7 @@ class HashWorker (threading.Thread):
             logLock.release()
 
           else:
-            status = '%s CORRUPT!' % gtaFile
+            status = '%s HASH MISMATCH!' % gtaFile
             expected = 'Expected \'%s\' but found \'%s\'' % (fileHash, gtaHash)
             logLock.acquire()
             with open(logFile, 'a') as log:
@@ -173,7 +173,7 @@ class HashWorker (threading.Thread):
 
 # Setup parameters of the work force
 workForce = []
-workerCount = 5
+workerCount = 4
 
 # Hire a work force
 for index in range(0,workerCount):
