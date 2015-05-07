@@ -116,7 +116,7 @@ class HashWorker (threading.Thread):
         nextFile += 1
       tagOut.release()
 
-      if gtaFile <> -1:
+      if gtaFile != -1:
         if gtaFile in hashList:
           # Hash this file
           BLOCKSIZE = 64*1024
