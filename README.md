@@ -11,7 +11,7 @@ There are two lists of hash values that serve as lists of all expected files in 
 * `hashes.txt`: This list is updated based on the Social Club launcher. This is the version I own.
 * `steam_hashes.txt`: This list is based on the Steam version, and is based on user submissions. Please help me maintain this version by sending me your `checkGta.log` file if you spot any HASH MISMATCH files.
 
-**Last check:** The contents of `hashes.txt` was verified after the 1 May patch. The contents of `steam_hashes.txt` was verified after the 21 April patch.
+**Last check:** The contents of `hashes.txt` was verified after the 1 May patch. The contents of `steam_hashes.txt` was verified after the 1 May patch.
 
 No script will modify any files inside the game directory, or remove corrupt files.
 
