@@ -84,7 +84,7 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
 
     if gtaFile in hashList:
       # Hash this file
-      BLOCKSIZE = 64*1024
+      BLOCKSIZE = 50120*1024
       hasher = hashlib.new('sha256')
       with open(gtaFile, 'rb') as afile:
         buf = afile.read(BLOCKSIZE)
