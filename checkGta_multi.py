@@ -24,7 +24,9 @@ ignoreFiles = ['commandline.txt',
                'ReadMe\\Polish\\ReadMe.txt',
                'ReadMe\\Portuguese\\ReadMe.txt',
                'ReadMe\\Russian\\ReadMe.txt',
-               'ReadMe\\Spanish\\ReadMe.txt']
+               'ReadMe\\Spanish\\ReadMe.txt',
+               'installscript.vdf',
+               'steam_api64.dll']
 ignoreList = []
 for ignoreFile in ignoreFiles:
   ignoreList.append(os.path.join(gtaDirectory, ignoreFile))
@@ -36,14 +38,14 @@ with open(logFile, 'w') as log:
   log.write('')
 
 # Adapt hash file if we're using Steam
-hashFile = 'hashes.txt'
+hashFileName = 'hashes.txt'
 if len(sys.argv) > 1 and sys.argv[1] == '-steam':
-  hashFile = 'steam_hashes.txt'
+  hashFileName = 'steam_hashes.txt'
 
 # Ingest the master hash list
-print('Loading hash file: %s' % hashFile)
+print('Loading hash file: %s' % hashFileName)
 hashList = {}
-with open(hashFile, 'r') as hashFile:
+with open(hashFileName, 'r') as hashFile:
   lineType = 0
   fileName = ''
   for line in hashFile:
@@ -153,7 +155,7 @@ class HashWorker (threading.Thread):
             badFiles += 1
             logLock.release()
 
-        elif gtaFile not in ignoreList and gtaFile.find('.part') == -1 and gtaFile.find('.hash') == -1 and gtaFile.find('.lnk') == -1:
+        elif gtaFile not in ignoreList and gtaFile.find('.part') == -1 and gtaFile.find('.hash') == -1 and gtaFile.find('.lnk') == -1 and gtaFile.find('_CommonRedist') == -1 and gtaFile.find('Installers') == -1:
           # Not sure about this file, output for inspection
           status = 'UNKNOWN file: %s' % gtaFile
           logLock.acquire()
@@ -189,7 +191,7 @@ for worker in workForce:
   worker.join()
 
 # All files processed, output results
-print('%s files OK, %s files HASH MISMATCHES, %s files UNKNOWN' % (okayFiles, badFiles, unknownFiles))
+print('%s files OK, %s HASH MISMATCHES, %s files UNKNOWN' % (okayFiles, badFiles, unknownFiles))
 
 endTime = time.time()
 duration = endTime - startTime
