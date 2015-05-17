@@ -23,7 +23,9 @@ ignoreFiles = ['commandline.txt',
                'ReadMe\\Polish\\ReadMe.txt',
                'ReadMe\\Portuguese\\ReadMe.txt',
                'ReadMe\\Russian\\ReadMe.txt',
-               'ReadMe\\Spanish\\ReadMe.txt']
+               'ReadMe\\Spanish\\ReadMe.txt',
+               'installscript.vdf',
+               'steam_api64.dll']
 ignoreList = []
 for ignoreFile in ignoreFiles:
   ignoreList.append(os.path.join(gtaDirectory, ignoreFile))
@@ -35,14 +37,14 @@ with open(logFile, 'w') as log:
   log.write('')
 
 # Adapt hash file if we're using Steam
-hashFile = 'hashes.txt'
+hashFileName = 'hashes.txt'
 if len(sys.argv) > 1 and sys.argv[1] == '-steam':
-  hashFile = 'steam_hashes.txt'
+  hashFileName = 'steam_hashes.txt'
 
 # Ingest the master hash list
-print('Loading hash file: %s' % hashFile)
+print('Loading hash file: %s' % hashFileName)
 hashList = {}
-with open('hashes.txt', 'r') as hashFile:
+with open(hashFileName, 'r') as hashFile:
   lineType = 0
   fileName = ''
   for line in hashFile:
@@ -73,6 +75,7 @@ with open('hashes.txt', 'r') as hashFile:
 okayFiles = 0
 badFiles = 0
 unknownFiles = 0
+
 
 # Walk through all files in the install directory
 for dirpath, dirnames, filenames in os.walk(gtaDirectory):
@@ -111,7 +114,7 @@ for dirpath, dirnames, filenames in os.walk(gtaDirectory):
         print(expected)
         badFiles += 1
 
-    elif gtaFile not in ignoreList and gtaFile.find('.part') == -1 and gtaFile.find('.hash') == -1 and gtaFile.find('.lnk') == -1 and gtaFile.find('_CommonRedist') == -1:
+    elif gtaFile not in ignoreList and gtaFile.find('.part') == -1 and gtaFile.find('.hash') == -1 and gtaFile.find('.lnk') == -1 and gtaFile.find('_CommonRedist') == -1 and gtaFile.find('Installers') == -1:
       # Not sure about this file, output for inspection
       status = 'UNKNOWN file: %s' % gtaFile
       with open(logFile, 'a') as log:
